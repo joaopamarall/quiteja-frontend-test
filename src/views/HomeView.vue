@@ -1,8 +1,9 @@
 <template>
   <div class="home">
-    <img src="@/assets/logo.png" />
-    <h1>Teste pratico QuiteJa</h1>
-    <router-link to="/user">Acesse a tabela de usuários</router-link>
+    <v-main class="home__main">
+      <img src="@/assets/logo.png" />
+      <h1>Teste pratico QuiteJa</h1>
+    </v-main>
   </div>
 </template>
 
@@ -11,3 +12,14 @@ export default {
   name: "HomeView",
 };
 </script>
+<style lang="scss">
+.home {
+
+  &__main {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+</style>

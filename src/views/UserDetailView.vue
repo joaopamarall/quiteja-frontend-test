@@ -1,6 +1,10 @@
 <template>
+  <v-container class="text-start">
+  <v-btn><router-link to="/user" class="text-decoration-none">
+      <v-icon left> mdi-arrow-left </v-icon>
+      Voltar</router-link>
+    </v-btn>
   <v-card class="mx-auto mt-16" max-width="800">
-    <!-- Imagem e título -->
     <v-img
       class="white--text align-end"
       width="100%"
@@ -11,7 +15,6 @@
       </v-card-title>
     </v-img>
 
-    <!-- Detalhes principais -->
     <v-card-subtitle class="pb-4">
       <strong>Email:</strong> {{ user.email }}
     </v-card-subtitle>
@@ -19,7 +22,6 @@
     <v-card-text>
       <v-divider></v-divider>
 
-      <!-- Telefone -->
       <div class="mt-2">
         <strong>Telefone:</strong> {{ user.phone }}
       </div>
@@ -51,6 +53,7 @@
       </div>
     </v-card-text>
   </v-card>
+</v-container>
 </template>
 
 

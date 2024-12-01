@@ -1,9 +1,12 @@
 <template>
-  <div class="userList">
+  <v-container class="userList pt-16 text-start">
+    <v-btn><router-link to="/" class="text-decoration-none">
+      <v-icon left> mdi-arrow-left </v-icon>
+      Voltar</router-link>
+    </v-btn>
     <v-row class="d-flex justify-center align-center ma-0">
       <v-col cols="6">
         <v-data-table
-          sort-by="fullName"
           class="elevation-1 d-flex flex-column"
           :headers="headers"
           :items="items"
@@ -61,7 +64,6 @@
         </v-data-table>
       </v-col>
     </v-row>
-    <!-- Dialog de Editar -->
     <v-dialog v-model="dialog" max-width="50%">
       <v-card>
         <v-card-title>
@@ -100,7 +102,6 @@
       </v-card>
     </v-dialog>
 
-    <!-- Dialog de Deletar -->
     <v-dialog v-model="dialogDelete" max-width="500px">
       <v-card>
         <v-card-title class="text-h5"
@@ -115,7 +116,7 @@
         </v-card-actions>
       </v-card>
     </v-dialog>
-  </div>
+  </v-container>
 </template>
 
 <script>
@@ -184,7 +185,10 @@ export default {
         (item) => item.id === this.editedItem.id
       );
       if (findIndexItem !== -1) {
-        this.$set(this.items, findIndexItem, { ...this.editedItem, fullName: this.editedItem.firstName +' '+ this.editedItem.lastName});
+        this.$set(this.items, findIndexItem, {
+          ...this.editedItem,
+          fullName: this.editedItem.firstName + " " + this.editedItem.lastName,
+        });
       } else {
         console.log("Usuário não encontrado para atualização.");
       }
