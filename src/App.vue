@@ -6,7 +6,7 @@
 
 <style lang="scss">
 #app {
-  font-family: "Roboto", sans-serif;
+  background-color: rgb(213, 245, 229);
   text-align: center;
   color: #2c3e50;
 }
